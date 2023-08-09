@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Type extends Model
 {
     use HasFactory;
-    protected $guarded = 'id';
+    protected $guarded = ['id'];
 
     public function users()
     {

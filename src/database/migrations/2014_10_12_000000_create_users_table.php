@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->integer('type_id')->nullable();
             $table->integer('way_id')->nullable();
-            $table->integer('target');
+            $table->integer('target')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

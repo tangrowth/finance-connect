@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Way extends Model
 {
     use HasFactory;
-    protected $guarded = 'id';
+    protected $guarded = ['id'];
 
     public function users(){
         return $this->hasMany('App\Models\User');

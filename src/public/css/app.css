@@ -1,0 +1,63 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+header {
+  background-color: #45C6B4;
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+.main__title {
+  color: #fff;
+  font-size: 40px;
+  margin: 20px;
+}
+.main__form {
+  margin: 25px;
+}
+
+.main__form input{
+  height: 30px;
+  font-size: 15px;
+}
+
+.main__form select{
+  height: 30px;
+  width: 100px;
+  font-size: 15px;
+}
+
+.main {
+  height: calc(100vh - 80px);
+  display: flex;
+}
+.nav {
+  background-color: #242527;
+  width: 230px;
+  height: 100%;
+}
+
+.nav__item{
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  padding:10px;
+  padding-left: 40px;
+}
+
+.nav__item img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+main {
+  height: 100%;
+  width: calc(100vw - 230px);
+}
