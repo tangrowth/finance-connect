@@ -12,7 +12,9 @@
 
 <body>
   <header>
-    <h1 class="main__title">Finance Connect</h1>
+    <a href="/">
+      <h1 class="main__title">Finance Connect</h1>
+    </a>
     <form action="" class="main__form">
       <select name="" id=""></select>
       <input type="text">
@@ -21,9 +23,9 @@
   <div class="main">
     <aside class="nav">
       @if (Auth::check())
-      <a href="" class="nav__item">
-        <img src="{{ asset("storage/images/note.png") }}" alt="記録をつける">
-        <p>記録</p>
+      <a href="/check" class="nav__item">
+        <img src="{{ asset("storage/images/note.png") }}" alt="金融の診断">
+        <p>診断</p>
       </a>
       <a href="" class="nav__item">
         <img src="{{ asset("storage/images/post.png") }}" alt="投稿を作成する">

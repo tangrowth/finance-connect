@@ -14,9 +14,9 @@ class WaysTableSeeder extends Seeder
     public function run(): void
     {
         $ways = [
-            ['title'=> '株式投資'],
             ['title' => '不動産投資'],
             ['title' => '外国為替取引（FX）'],
+            ['title'=> '株式投資'],
             ['title' => '債券投資'],
             ['title' => '投資信託'],
         ];

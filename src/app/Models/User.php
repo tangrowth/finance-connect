@@ -53,9 +53,4 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Models\Reference');
     }
-
-    public function records()
-    {
-        return $this->hasMany('App\Models\Record');
-    }
 }

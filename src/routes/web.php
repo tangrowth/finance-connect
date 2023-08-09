@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +15,10 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', [PostController::class, 'index'])->name('home');
-
+Route::group(['middleware' => 'auth'], function () {
+  Route::get('/', [PostController::class, 'index'])->name('home');
+  Route::get('/setting', [UserController::class, 'type'])->name('type');
+  Route::post('/setting', [UserController::class, 'setting'])->name('setting');
+  Route::get('/check', [UserController::class, 'check'])->name('check');
+  Route::get('/check/result', [UserController::class, 'judge'])->name('judge');
+});

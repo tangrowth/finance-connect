@@ -15,9 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('content');
-            $table->integer('user_id');
+            $table->integer('month');
+            $table->integer('amount');
             $table->integer('difficulty');
-            $table->integer('knowledge');
+            $table->integer('user_id');
+            $table->integer('way_id');
             $table->timestamps();
         });
     }
