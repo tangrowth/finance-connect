@@ -21,7 +21,7 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: root
             MYSQL_DATABASE: fincon_db
-            MYSQL_USER: fincon_user
+            MYSQL_USER: root
             MYSQL_PASSWORD: password
         command:
             mysqld --default-authentication-plugin=mysql_native_password
