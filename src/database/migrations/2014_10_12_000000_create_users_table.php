@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('type_id')->nullable();
             $table->integer('way_id')->nullable();
             $table->integer('target')->nullable();
+            $table->integer('achieved')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

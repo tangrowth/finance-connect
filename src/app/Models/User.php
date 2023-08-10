@@ -49,8 +49,8 @@ class User extends Authenticatable
         return $this->belongsTo('App\Models\Type');
     }
 
-    public function reference()
+    public function favorites()
     {
-        return $this->hasOne('App\Models\Reference');
+        return $this->hasMany('App\Models\Favorite');
     }
 }

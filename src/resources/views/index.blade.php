@@ -10,15 +10,32 @@
   <a href="{{ route('check') }}" class="message__button">診断を受ける</a>
 </div>
 @endif
+@if(@isset($errors) && count($errors) > 0)
+<div class="message">
+  @foreach ($errors->all() as $error)
+  {{ $error }}<br>
+  @endforeach
+</div>
+@endif
 <div class="top">
   <div class="top__block-1">
     <div class="block__title">
       <h2>目標金額</h2>
     </div>
     <div class="block__content">
-      <p>{{ $user['target'] }}万円</p>
-      <p>利益：　{{ $user['target'] }}万円</p>
-      <p>達成状況：　％</p>
+      <form action="{{ route('target.setting') }}" method="post" class="form__input">
+        @csrf
+        <label for="">目標金額：<input type="number" name="target" value="{{ $user['target'] }}">万円</label><br />
+        <label for="">達成金額：<input type="number" name="achieved" value="{{ $user['achieved'] }}">万円</label><br />
+        @if($user['achieved'] > 0)
+        <?php
+        $percent = ($user['achieved'] / $user['target']) * 100;
+        $percent = ceil($percent);
+        ?>
+        <p>達成状況：{{ $percent }}％</p>
+        @endif
+        <button class="form__button-submit" type="submit">更新する</button>
+      </form>
     </div>
   </div>
   <div class="top__block-2">
@@ -28,9 +45,6 @@
     <div class="block__table">
       <form action="{{ route('setting') }}" method="post">
         @csrf
-        @foreach ($errors->all() as $error)
-        {{ $error }}<br>
-        @endforeach
         <table>
           <tr>
             <th>名前</th>
@@ -86,37 +100,14 @@
         <p>記録をつけることであなたのこれまでの頑張りを振り返ることが出来ます。また、記録は公開されるため、あなたの頑張りや編み出した方法をみんなに教えることが出来ます。</p>
       </div>
       <div class="block__content-button">
-        <a href="/record/add" class="form__button-submit">記録を作成する</a>
-        <a href="/record/user" class="form__button-click">記録を振り返る</a>
+        <a href="{{ route('post.add') }}" class="form__button-submit">記録を作成する</a>
+        <a href="{{ route('post.review') }}" class="form__button-click">記録を振り返る</a>
       </div>
     </div>
   </div>
 </div>
+@include('common.posts', ['posts' => $posts, 'title' => '最新の記事'])
 <div class="posts">
-  <h2 class="posts__title">最新の記事</h2>
-  <div class="posts__card-list">
-    @foreach($posts as $post)
-    <div class="posts__card">
-      <a href="">
-        <div class="posts__card-title">
-          <h3>{{ $post['title'] }}</h3>
-          <p>{{ $post->user->type->type }}の{{ $post->user->name }}さんの場合</p>
-        </div>
-        <div class="posts__card-content">
-          <p>期間：{{ $post['month'] }}か月</p>
-          <p>金額：{{ $post['amount'] }}万円</p>
-        </div>
-        <div class="posts__card-forecast">
-          <?php
-          $result = ($post->amount / $post->month);
-          $lastResult = ($user->target / $result) + 1;
-          $lastResult = ceil($lastResult);
-          ?>
-          <p>あなたの場合、{{ $lastResult }}か月で目標達成！</p>
-        </div>
-      </a>
-    </div>
-    @endforeach
-  </div>
+  <a href="{{ route('post.show') }}" class="form__button-click">もっと記録を見る</a>
 </div>
 @endsection

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TargetRequest;
+use App\Http\Requests\TypeRequest;
+use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
 use App\Models\Type;
 use App\Models\User;
@@ -16,7 +19,32 @@ class UserController extends Controller
         return view('user.type', compact('types'));
     }
 
-    public function setting(Request $request){
+    public function setting(UserRequest $request){
+        $form = $request->all();
+        unset($form['_token']);
+        $user_id = Auth::id();
+        User::where('id', $user_id)->update($form);
+        return redirect('/');
+    }
+
+    public function settingType(TypeRequest $request)
+    {
+        $form = $request->all();
+        unset($form['_token']);
+        $user_id = Auth::id();
+        User::where('id', $user_id)->update($form);
+        return redirect('/');
+    }
+
+    public function settingTarget(TargetRequest $request){
+        $form = $request->all();
+        unset($form['_token']);
+        $user_id = Auth::id();
+        User::where('id', $user_id)->update($form);
+        return redirect('/');
+    }
+
+    public function settingWay(Request $request){
         $form = $request->all();
         unset($form['_token']);
         $user_id = Auth::id();

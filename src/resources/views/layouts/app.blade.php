@@ -23,21 +23,21 @@
         <img src="{{ asset("storage/images/home.png") }}" alt="ホーム">
         <p>ホーム</p>
       </a>
-      <a href="" class="nav__item">
+      <a href="{{ route('post.add') }}" class="nav__item">
         <img src="{{ asset("storage/images/post.png") }}" alt="記録を作成する">
         <p>記録</p>
       </a>
-      <a href="" class="nav__item">
+      <a href="{{ route('post.show') }}" class="nav__item">
         <img src="{{ asset("storage/images/book.png") }}" alt="みんなの記録を見る">
         <p>みんなの記録</p>
       </a>
-      <a href="/check" class="nav__item">
+      <a href="{{ route('check') }}" class="nav__item">
         <img src="{{ asset("storage/images/note.png") }}" alt="金融の診断">
         <p>診断</p>
       </a>
-      <a href="" class="nav__item">
+      <a href="{{ route('favorite') }}" class="nav__item">
         <img src="{{ asset("storage/images/heart.png") }}" alt="お気に入りの投稿">
-        <p>お気に入り</p>
+        <p>保存した記録</p>
       </a>
       <a href="{{ route('logout') }}" class="nav__item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
         <img src="{{ asset('storage/images/logout.png') }}" alt="ログアウト">

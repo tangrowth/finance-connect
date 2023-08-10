@@ -8,7 +8,7 @@
   <div class="form__title">
     <h2>基本の登録</h2>
   </div>
-  <form class="form__inner" action="{{ route('setting') }}" method="post">
+  <form class="form__inner" action="{{ route('type.setting') }}" method="post">
     @csrf
     <p>まずは情報を登録しましょう！<br />あなたの職業と金融の目標金額を設定しましょう。</p>
     <div class="form__error">

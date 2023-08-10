@@ -15,8 +15,12 @@ class Post extends Model
         return $this->belongsTo('App\Models\User');
     }
 
-    public function references()
+    public function way(){
+        return $this->belongsTo('App\Models\Way');
+    }
+
+    public function favorites()
     {
-        return $this->hasMany('App\Models\Reference');
+        return $this->hasMany('App\Models\Favorite');
     }
 }
