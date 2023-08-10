@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('css')
-
+<link rel="stylesheet" href="{{ asset('/css/main.css')  }}">
 @endsection
 
 @section('page')
@@ -10,71 +10,71 @@
   </div>
   <form class="form__inner" action="{{ route('judge') }}" method="get">
     @csrf
+    <p>あなたにぴったりの金融の手段を診断をしましょう！　それぞれの質問に対して、当てはまるものを選択してください。</p>
     <div class="form__error">
       @foreach ($errors->all() as $error)
       {{ $error }}<br>
       @endforeach
     </div>
-    <p>診断をしましょう！　それぞれの質問に対して、当てはまるものを選択してください。また、数字は当てはまれば当てはまるほど高い数字を選択してください。</p>
     <div class="form__group">
-      <p>高額な初期投資ができるか</p>
-      <select name="answers[]" id="">
-        <option value="1">1</option><!--不動産1 -->
-        <option value="2">2</option><!-- 為替2 -->
-        <option value="3">3</option><!-- 株式3 -->
-        <option value="4">4</option><!-- 債権4 -->
-        <option value="5">5</option><!-- 信託投資5 -->
-      </select>
+      <p><span>Q1</span>高額な初期投資ができるか</p>
+      <div class="form__group-radio">
+        <label class="form__group-label"><input type="radio" value="1" name="answers[1]">いいえ</label>
+        <label class="form__group-label"><input type="radio" value="2" name="answers[1]">どちらかと言うといいえ</label>
+        <label class="form__group-label"><input type="radio" value="3" name="answers[1]" checked>ふつう</label>
+        <label class="form__group-label"><input type="radio" value="4" name="answers[1]">どちらかと言うとはい</label>
+        <label class="form__group-label"><input type="radio" value="5" name="answers[1]">はい</label>
+      </div>
     </div>
     <div class="form__group">
-      <p>利益は早く出た方がいい</p>
-      <select name="answers[]" id="">
-        <option value="1">1</option>
-        <option value="4">2</option>
-        <option value="3">3</option>
-        <option value="5">4</option>
-        <option value="2">5</option>
-      </select>
+      <p><span>Q2</span>利益は早く出た方がいい</p>
+      <div class="form__group-radio">
+        <label class="form__group-label"><input type="radio" value="1" name="answers[2]">いいえ</label>
+        <label class="form__group-label"><input type="radio" value="4" name="answers[2]">どちらかと言うといいえ</label>
+        <label class="form__group-label"><input type="radio" value="3" name="answers[2]" checked>ふつう</label>
+        <label class="form__group-label"><input type="radio" value="5" name="answers[2]">どちらかと言うとはい</label>
+        <label class="form__group-label"><input type="radio" value="2" name="answers[2]">はい</label>
+      </div>
     </div>
     <div class="form__group">
-      <p>リスクが低い方がいい</p>
-      <select name="answers[]" id="">
-        <option value="3">1</option>
-        <option value="2">2</option>
-        <option value="1">3</option>
-        <option value="5">4</option>
-        <option value="4">5</option>
-      </select>
+      <p><span>Q3</span>リスクが低い方がいい</p>
+      <div class="form__group-radio">
+        <label class="form__group-label"><input type="radio" value="3" name="answers[3]">いいえ</label>
+        <label class="form__group-label"><input type="radio" value="2" name="answers[3]">どちらかと言うといいえ</label>
+        <label class="form__group-label"><input type="radio" value="1" name="answers[3]" checked>ふつう</label>
+        <label class="form__group-label"><input type="radio" value="4" name="answers[3]">どちらかと言うとはい</label>
+        <label class="form__group-label"><input type="radio" value="5" name="answers[3]">はい</label>
+      </div>
     </div>
     <div class="form__group">
-      <p>手間はかけたくない</p>
-      <select name="answers[]" id="">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
+      <p><span>Q4</span>手間はかけたくない</p>
+      <div class="form__group-radio">
+        <label class="form__group-label"><input type="radio" value="1" name="answers[4]">いいえ</label>
+        <label class="form__group-label"><input type="radio" value="2" name="answers[4]">どちらかと言うといいえ</label>
+        <label class="form__group-label"><input type="radio" value="3" name="answers[4]" checked>ふつう</label>
+        <label class="form__group-label"><input type="radio" value="4" name="answers[4]">どちらかと言うとはい</label>
+        <label class="form__group-label"><input type="radio" value="5" name="answers[4]">はい</label>
+      </div>
     </div>
     <div class="form__group">
-      <p>経済に関する知識があるか</p>
-      <select name="answers[]" id="">
-        <option value="5">1</option><!--不動産1 -->
-        <option value="4">2</option><!-- 為替2 -->
-        <option value="1">3</option><!-- 株式3 -->
-        <option value="3">4</option><!-- 債権4 -->
-        <option value="2">5</option><!-- 信託投資5 -->
-      </select>
+      <p><span>Q5</span>経済に関する知識があるか</p>
+      <div class="form__group-radio">
+        <label class="form__group-label"><input type="radio" value="5" name="answers[5]">いいえ</label>
+        <label class="form__group-label"><input type="radio" value="4" name="answers[5]">どちらかと言うといいえ</label>
+        <label class="form__group-label"><input type="radio" value="1" name="answers[5]" checked>ふつう</label>
+        <label class="form__group-label"><input type="radio" value="3" name="answers[5]">どちらかと言うとはい</label>
+        <label class="form__group-label"><input type="radio" value="2" name="answers[5]">はい</label>
+      </div>
     </div>
     <div class="form__group">
-      <p>情報を積極的に調べられるか</p>
-      <select name="answers[]" id="">
-        <option value="5">1</option><!--不動産1 -->
-        <option value="4">2</option><!-- 為替2 -->
-        <option value="1">3</option><!-- 株式3 -->
-        <option value="3">4</option><!-- 債権4 -->
-        <option value="2">5</option><!-- 信託投資5 -->
-      </select>
+      <p><span>Q6</span>情報を積極的に調べられるか</p>
+      <div class="form__group-radio">
+        <label class="form__group-label"><input type="radio" value="5" name="answers[6]">いいえ</label>
+        <label class="form__group-label"><input type="radio" value="4" name="answers[6]">どちらかと言うといいえ</label>
+        <label class="form__group-label"><input type="radio" value="1" name="answers[6]" checked>ふつう</label>
+        <label class="form__group-label"><input type="radio" value="3" name="answers[6]">どちらかと言うとはい</label>
+        <label class="form__group-label"><input type="radio" value="2" name="answers[6]">はい</label>
+      </div>
     </div>
     <div class="form__button">
       <button class="form__button-submit" type="submit">診断する</button>

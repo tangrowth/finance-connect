@@ -35,8 +35,9 @@ class UserController extends Controller
         $maxCount = max($counts);
         $result = array_search($maxCount, $counts);
         $way = Way::where('id', $result)->first();
-        $posts = Post::where('way_id', $result)->take(6)->get();
-        return view('user.result', compact('way', 'posts', 'user'));
+        $latestPosts = Post::where('way_id', $result)->latest()->take(4)->get();
+        $difficultyPosts = Post::where('way_id', $result)->orderBy('difficulty', 'desc')->take(4)->get();
+        return view('user.result', compact('way', 'latestPosts','difficultyPosts', 'user'));
     }
 
 }
