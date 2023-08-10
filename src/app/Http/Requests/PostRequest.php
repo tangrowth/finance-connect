@@ -24,7 +24,7 @@ class PostRequest extends FormRequest
         return [
             'month' => 'required|min:1|integer',
             'amount' => 'required|min:1|integer',
-            'title' => 'required|strings',
+            'title' => 'required',
             'content' => 'required',
         ];
     }
