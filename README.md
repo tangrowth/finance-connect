@@ -2,7 +2,7 @@
 
 
 ## 作成した目的
-![APP Top](https://github.com/tangrowth/finance-connect/assets/101622404/50a0a0d9-c25a-4b28-ab9d-66a1dfcd6b3)
+![APP Top](https://github.com/tangrowth/finance-connect/assets/101622404/2d55658b-3150-406f-9838-94885f9512db)
 ベネッセのUser-Based Digital Competitionにて作成しました。
 金融の知識を手軽に得ることが出来るようにし、また自分の手法を投稿しいいねをもらうことでモチベーションの維持につなげることが目的です。
 ## 機能一覧
