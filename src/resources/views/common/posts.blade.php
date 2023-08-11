@@ -8,7 +8,7 @@
         <div class="posts__card-title">
           <h3>{{ $post['title'] }}</h3>
           <h4>{{ $post->way->title }}</h4>
-          <p>{{ $post->user->type->type }}の{{ $post->user->name }}さんの場合</p>
+          <p>{{ $post->user->type->type }}・{{ $post->user->name }}さん</p>
         </div>
         <div class="posts__card-content">
           <p>期間：{{ $post['month'] }}か月</p>
@@ -25,9 +25,9 @@
       </a>
     </div>
     @php $count++; @endphp
-    @if ($count % 4 === 0) 
-    </div>
-    <div class="posts__card-list">
+    @if ($count % 4 === 0)
+  </div>
+  <div class="posts__card-list">
     @endif
     @endforeach
   </div>

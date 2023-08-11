@@ -14,12 +14,15 @@ class TypesTableSeeder extends Seeder
     {
         $types = [
             ['type' => '学生'],
-            ['type' => '社会人'],
+            ['type' => '会社員'],
             ['type' => '主婦・主夫'],
-            ['type' => 'フリーランス'],
             ['type' => '経営者'],
-            ['type' => 'パートタイマー'],
-            ['type' => 'シニア'],
+            ['type' => 'パート'],
+            ['type' => '定年退職'],
+            ['type' => '公務員'],
+            ['type' => '自営業'],
+            ['type' => '教員'],
+            ['type' => '医療従事者'],
 
         ];
 

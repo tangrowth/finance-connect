@@ -18,13 +18,14 @@ class PostController extends Controller
         if($user->type_id == null || $user->target == null){
             return view('user.type', compact('types'));
         }
-        $posts = Post::latest()->take(4)->get();
+        $latestPosts = Post::latest()->take(4)->get();
+        $sameWayPosts = Post::latest()->where('way_id', $user->way_id)->take(4)->get();
         $ways = Way::all();
         if(is_null($user->way_id)){
             $message = 'まだ金融の方法が決まっていないようですね。金融方法診断を受けてみませんか？';
-            return view('index', compact('message', 'user', 'posts', 'ways', 'types'));
+            return view('index', compact('message', 'user', 'latestPosts', 'sameWayPosts', 'ways', 'types'));
         } else {
-            return view('index', compact('user', 'posts', 'ways', 'types'));
+            return view('index', compact('user','latestPosts', 'sameWayPosts', 'ways', 'types'));
         }
     }
 
