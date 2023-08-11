@@ -13,6 +13,7 @@
 <body>
   <header>
     <a href="/">
+      <img src="{{ asset("storage/images/silhouette.png") }}" class="main__img">
       <h1 class="main__title">Finance Connect</h1>
     </a>
   </header>

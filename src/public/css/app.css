@@ -6,12 +6,16 @@ body {
   overflow: hidden;
 }
 
-header {
+header a{
   background-color: #45C6B4;
   width: 100vw;
   height: 80px;
   display: flex;
-  justify-content: space-between;
+}
+
+.main__img {
+  height: 40px;
+  margin: 20px 0 20px 20px;
 }
 
 a {
@@ -21,7 +25,7 @@ a {
 .main__title {
   color: #fff;
   font-size: 40px;
-  margin: 20px;
+  margin: 20px 10px;
 }
 .main__form {
   margin: 20px;
